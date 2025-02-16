@@ -1,6 +1,8 @@
 import { useStorage } from "@plasmohq/storage/hook"
 
 function IndexPopup() {
+  // ポップアップを開いた回数を計上
+  // 初期値を永続化せずにレンダリングしているっぽい
   const [openCount] = useStorage<number>("open-count", (storedCount) =>
     typeof storedCount === "undefined" ? 0 : storedCount + 1
   )
